@@ -12,28 +12,33 @@ Describe your project in one/two lines.
 - **sign up** - As a user I want to sign up on the webpage so that I can see all the events that I could attend
 - **login** - As a user I want to be able to log in on the webpage so that I can get back to my account
 - **logout** - As a user I want to be able to log out from the webpage so that I can make sure no one will access my account
-- **events list** - As a user I want to see all the events available so that I can choose which ones I want to attend
-- **events create** - As a user I want to create an event so that I can invite others to attend
-- **events detail** - As a user I want to see the event details and attendee list of one event so that I can decide if I want to attend 
-- **event attend** - As a user I want to be able to attend to event so that the organizers can count me in
+- **dashboard** - As a user I want to see all the news available so that I can choose which ones I want to read
+- **Headlines** - As a user I want to read only the headlines of the news.
+- **Everything/ All news** - As a user I want to see the news details.
+- **Sources** - As a user I want to be able to check the sources and read specific news from the source.
 
 ## Backlog
 
-List of other features outside of the MVPs scope
+##News recomendation 
+on the basis of user interest
+Ask the user to get notified or not.
+if yes
+{
+Notify the user (1notification per day) via email / sms
+}
 
-User profile:
-- see my profile
-- upload my profile picture
-- see other users profile
-- list of events created by the user
-- list events the user is attending
-
-Geo Location:
-- add geolocation to events when creating
-- show event in a map in event detail page
-- show all events in a map in the event list page
-
-Homepage
+else{
+no nitification will be send to the user
+}
+##
+1)mobile responsive design
+2)offline mode reading 
+3)Save to read to later
+4)Notification through email
+5)Progressive Web Application implementation
+6)Notification to mobile/ web
+7)sharing news via various apps
+8)Custom blogs(like and dislike)
 - ...
 
 
@@ -61,22 +66,21 @@ Homepage
 - POST /auth/logout
   - body: (empty)
 
-- GET /events
-  - renders the event list + the create form
-- POST /events/create 
-  - redirects to / if user is anonymous
+- GET /news
+  - renders the news
   - body: 
-    - name
-    - date
-    - location
+    - headlines
+    - everything
+    - sources
     - description
-- GET /events/:id
-  - renders the event detail page
-  - includes the list of attendees
-  - attend button if user not attending yet
-- POST /events/:id/attend 
-  - redirects to / if user is anonymous
-  - body: (empty - the user is already stored in the session)
+  -GET /v2/top-headlines
+    - renders the headlines of all news.
+  -GET /v2/everything
+   - renders all news.
+   -GET /v2/sources
+    -renders all sources available.
+
+
 
 
 ## Models
@@ -88,18 +92,11 @@ username: String
 password: String
 ```
 
-Event model
-
-```
-owner: ObjectId<User>
-name: String
-description: String
-date: Date
-location: String
-attendees: [ObjectId<User>]
-``` 
 
 ## Links
+### wireframes
+
+https://balsamiq.cloud/svkqwoq/pjaepsx
 
 ### Trello
 
