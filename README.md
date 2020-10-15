@@ -16,6 +16,7 @@ Describe your project in one/two lines.
 - **Headlines** - As a user I want to read only the headlines of the news.
 - **Everything/ All news** - As a user I want to see the news details.
 - **Sources** - As a user I want to be able to check the sources and read specific news from the source.
+- **Mobiles responsive ** 
 
 ## Backlog
 
