@@ -89,8 +89,17 @@ no nitification will be send to the user
 User model
  
 ```
-username: String
+username: type : objectId,ref:user
 password: String
+```
+Blog model
+
+```
+  user : String
+  text :String
+  name : String
+  likes : ref=>"User"
+  
 ```
 
 
