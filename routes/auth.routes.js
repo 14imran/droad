@@ -44,7 +44,7 @@ router.post("/login", (req, res) => {
       if (result) {
         // userName = userData.name
         req.session.loggedInUser = userData;
-        res.redirect("/");
+        res.redirect("/dashboard");
       } else {
         res
           .status(500)
