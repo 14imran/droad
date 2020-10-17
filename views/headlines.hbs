@@ -1,0 +1,18 @@
+<h1>welcome to headlines news</h1>
+<nav>
+  <button><a href="/headlines">headlines</a></button>
+  <button><a href="/everything">Everything</a></button>
+  <button><a href="/sources">Sources</a><br></button>
+  <br><br>
+</nav>
+
+{{#each data}}
+<div>
+  <img style="width:400px" src="{{urlToImage}}">
+  <h1>{{this.title}}</h1>
+  {{this.description}}
+  {{this.content}}
+  <a href="{{this.url}}">read more</a>
+  <br><br>
+</div>
+{{/each}}

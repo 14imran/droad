@@ -1,0 +1,16 @@
+<h1>welcome to sources news</h1>
+<nav>
+  <button><a href="/headlines">headlines</a></button>
+  <button><a href="/everything">Everythind</a></button>
+  <button><a href="/sources">Sources</a><br></button>
+  <br><br>
+</nav>
+
+{{#each data}}
+<div>
+  <h1>{{this.name}}</h1>
+  {{this.description}}
+  <a href="{{this.url}}">check source</a>
+  <br><br>
+</div>
+{{/each}}

@@ -67,4 +67,8 @@ app.use('/', index);
 const authSign = require("./routes/auth.routes");
 app.use("/", authSign);
 
+
+const newsRoutes = require("./routes/news.routes");
+app.use("/", newsRoutes);
+
 module.exports = app;
