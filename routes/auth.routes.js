@@ -13,7 +13,7 @@ router.post("/signup", (req, res) => {
   if (!name || !email || !password) {
     res
       .status(500)
-      .render("auth/signup.hbs", { message: "Please enter all details" });
+      .render("auth/signup.hbs", { message: "Please enter all detail" });
     return;
   }
   bcrypt.genSalt(10).then((salt) => {
