@@ -71,4 +71,9 @@ app.use("/", authSign);
 const newsRoutes = require("./routes/news.routes");
 app.use("/", newsRoutes);
 
+
+const searchRoutes = require("./routes/seacrh.routes");
+app.use("/search", searchRoutes);
+
+
 module.exports = app;

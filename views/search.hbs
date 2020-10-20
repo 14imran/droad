@@ -1,18 +1,17 @@
-<h1>welcome to headlines news</h1>
 <h1>hi search</h1>
-<form action='/search' method="GET"> 
-<div id="searchWrapper">
-  <input type="text" name="searchBar" id="searchBar" placeholder="search" />
-  <input type="submit" ></input><br><br>
-</div>
+<form action='/search' method="GET">
+  <div id="searchWrapper">
+    <input type="text" name="searchBar" id="searchBar" placeholder="search" />
+    <input type="submit"></input><br><br>
+  </div>
 </form>
-
 <nav>
   <button><a href="/headlines">headlines</a></button>
-  <button><a href="/everything">Everything</a></button>
+  <button><a href="/everything">Everythind</a></button>
   <button><a href="/sources">Sources</a><br></button>
   <br><br>
 </nav>
+
 
 {{#each data}}
 <div>
@@ -24,3 +23,6 @@
   <br><br>
 </div>
 {{/each}}
+
+
+<script src="/javascripts/script.js"></script>

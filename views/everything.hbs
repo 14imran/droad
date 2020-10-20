@@ -1,4 +1,12 @@
 <h1>welcome to everything news</h1>
+<h1>hi search</h1>
+<form action='/search' method="GET"> 
+<div id="searchWrapper">
+  <input type="text" name="searchBar" id="searchBar" placeholder="search" />
+  <input type="submit" ></input><br><br>
+</div>
+</form>
+
 
 <nav>
   <button><a href="/headlines">headlines</a></button>
@@ -8,6 +16,10 @@
 </nav>
 
 {{#each data}}
+
+
+
+
 <div>
   <img style="width:400px" src="{{urlToImage}}">
   <h1>{{this.title}}</h1>
