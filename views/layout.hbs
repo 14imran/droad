@@ -2,19 +2,98 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>{{title}}</title>
-  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Jekyll v4.1.1">
+  <title>Droad</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+
+
+  <style>
+   
+  </style>
+  <!-- Custom styles for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="/stylesheets/blog.css" rel="stylesheet">
+  {{!-- <link rel="stylesheet" href="/stylesheets/style.css" /> --}}
+
+
+
+
 </head>
+<div>
+  <nav class="navbar navbar-light bg-light shadow-lg p-3 mb-5 bg-white rounded ">
+    <a class="navbar-brand" href="/">
+      <img src="https://res.cloudinary.com/dst4hv2w2/image/upload/v1603262550/cover_e2f51t.png" width="40" height="40"
+        class="d-inline-block align-top" alt="" loading="lazy">
+      {{!-- Droad --}}
+    </a>
+    <div id="searchWrapper">
 
-<body>
-  <a href="/signup">Sign Up</a><br><br>
-  <a href="/login">Log In</a>
-  {{{body}}}
+{{!-- <div id="searchWrapper">
+    <input type="text" name="searchBar" id="searchBar" placeholder="search" />
+    <input type="submit"></input><br><br>
+  </div> --}}
 
-  <script src="/javascripts/script.js"></script>
-</body>
+
+      <form class="form-inline my-2 my-lg-0" action='/search' method="GET">
+        <input class="form-control mr-sm-2" name="searchBar" id="searchBar" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+
+
+
+
+    <div>
+      <button  class="btn btn-secondary my-2 my-sm-0" type="submit"><a style="color:white"href="/login">Login</a></button>
+    </div>
+
+  </nav>
+</div>
+<div class="container">
+
+
+  <body>
+
+
+    {{!-- <a href="/signup">Sign Up</a><br><br>
+    <a href="/login">Log In</a><br><br>
+
+    <button><a href="/logout">Log Out</a></button> --}}
+    {{{body}}}
+
+
+    {{!-- <div class="footerTofix">
+<footer class="mt-auto">
+  <div class="container">
+   <center> <span class="text-muted">Copyrights reserved @Droad</span></center>
+  </div>
+</footer> --}}
+
+    {{!-- <footer class="footer fixed-bottom">
+      <p>Copyrights reserverd @Droad</p>
+    </footer> --}}
+    </div>
+<footer class="footer fixed-bottom">
+  <p class="text-muted">Copyright &copy; <script>document.write(new Date().getFullYear());</script>, DROAD</p>
+</footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+      crossorigin="anonymous"></script>
+    <script src="/javascripts/script.js"></script>
+  </body>
+
 
 </html>

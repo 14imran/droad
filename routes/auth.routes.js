@@ -24,7 +24,7 @@ router.post("/signup", (req, res) => {
         password: hashedPassword,
       }).then(() => {
         console.log(hashedPassword, name, email);
-        res.redirect("/");
+        res.redirect("/login");
       });
     });
   });
@@ -53,6 +53,13 @@ router.post("/login", (req, res) => {
     });
   });
 });
+
+router.get("/logout", (req, res) => {
+  req.session.destroy();
+  res.redirect("/");
+});
+
+
 
 router.get("/dashboard", (req, res) => {
   //show dashboard page
