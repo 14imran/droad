@@ -1,2 +1,10 @@
-<h1>DROAD</h1>
-<p>Welcome user</p>
+
+{{#each data}}
+<div>
+  <img style="width:400px" src="{{urlToImage}}">
+  <h1>{{this.title}}</h1>
+
+  <a href="/login">read more</a>
+  <br><br>
+</div>
+{{/each}}

@@ -9,6 +9,12 @@ const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
 
+//server.js blogs articles
+const Article = require('./models/Blogsarticle.model')
+const articleRouter = require('./routes/BlogsArticles.routes')
+const methodOverride = require('method-override')
+//end
+
 
 const app_name = require('./package.json').name;
 const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.')[0]}`);
@@ -53,7 +59,10 @@ app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
-
+//view engile from blogs articles server.js
+// app.set('view engine', 'ejs')
+app.use(express.urlencoded({ extended: false }))
+app.use(methodOverride('_method'))
 
 // default value for title local
 app.locals.title = 'Express - Generated with IronGenerator';
@@ -70,5 +79,22 @@ app.use("/", authSign);
 
 const newsRoutes = require("./routes/news.routes");
 app.use("/", newsRoutes);
+
+
+const searchRoutes = require("./routes/seacrh.routes");
+app.use("/search", searchRoutes);
+
+//blogs server.js
+
+// app.get('/', async (req, res) => {
+//   const articles = await Article.find().sort({ createdAt: 'desc' })
+//   res.render('articles/index', { articles: articles })
+// })
+
+// app.use('/articles', articleRouter)
+
+const articleRoutes = require("./routes/BlogsArticles.routes");
+app.use("/articles",articleRoutes);
+
 
 module.exports = app;

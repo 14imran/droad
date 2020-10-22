@@ -1,20 +1,10 @@
-<h1>welcome to everything news</h1>
-{{!-- <h1>hi search</h1>
-<form action='/search' method="GET"> 
-<div id="searchWrapper">
-  <input type="text" name="searchBar" id="searchBar" placeholder="search" />
-  <input type="submit" ></input><br><br>
-</div>
+{{!-- <h1>hi search</h1> --}}
+{{!-- <form action='/search' method="GET">
+  <div id="searchWrapper">
+    <input type="text" name="searchBar" id="searchBar" placeholder="search" />
+    <input type="submit"></input><br><br>
+  </div>
 </form> --}}
-
-
-{{!-- <nav>
-  <button><a href="/headlines">headlines</a></button>
-  <button><a href="/everything">Everything</a></button>
-  <button><a href="/sources">Sources</a><br></button>
-  <button> <a href="/articles">Blogs</a><br></button>
-  <br><br>
-</nav> --}}
 <div class="nav-scroller py-1 mb-2">
   <nav class="nav d-flex justify-content-between">
     <a class="p-2 text-muted" href="/headlines">Headlines</a>
@@ -33,11 +23,8 @@
   </nav>
 </div>
 
+
 {{#each data}}
-
-
-
-
 <div>
   <img style="width:400px" src="{{urlToImage}}">
   <h1>{{this.title}}</h1>
@@ -49,16 +36,4 @@
 {{/each}}
 
 
-
-
-
-
-
-
-
-{{!-- {{#each data}}
-{{this.title}}
-{{this.description}}
-<a href="{{this.url}}">link</a>
-
-{{/each}} --}}
+<script src="/javascripts/script.js"></script>
