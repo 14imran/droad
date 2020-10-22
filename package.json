@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node ./bin/www",
     "dev": "DEBUG=droad:* nodemon ./bin/www",
-    "dev-windows": "nodemon ./bin/www"
+    "dev-windows": "nodemon ./bin/www",
+    "pwa": "create-pwa --icon=\"./public/images/cover.png\" --launch=\"./public/images/favicon.png\""
   },
   "dependencies": {
     "axios": "^0.20.0",
@@ -32,6 +33,7 @@
     "slugify": "^1.4.5"
   },
   "devDependencies": {
+    "create-pwa": "^2.3.0",
     "nodemon": "^1.12.1"
   }
 }

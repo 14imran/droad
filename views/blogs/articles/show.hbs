@@ -5,9 +5,10 @@
 <div>
   <hr>
 
-  <h3>title :</h3> {{article.title}}<br>
-  <h3>description:</h3> {{article.description}}<br>
-  <h3>article id:</h3> {{article._id}}<br>
-  <h3>markdown :</h3> {{article.slug}}
+  <h3>Author name :</h3>  {{this.currentUser.loggedInUser.name}}<br>
+  <h3>Title :</h3> {{article.title}}<br>
+  <h3>Description:</h3> {{article.description}}<br>
+  <h3>Markdown :</h3> {{article.markdown}}
 
   {{!-- {{/each}} --}}
+
