@@ -3,6 +3,7 @@ const router = express.Router();
 var bcrypt = require("bcryptjs");
 const UserModel = require("../models/User.model");
 
+// signup 
 router.get("/signup", (req, res) => {
   res.render("auth/signup.hbs");
 });
@@ -16,6 +17,7 @@ router.post("/signup", (req, res) => {
       .render("auth/signup.hbs", { message: "Please enter all details" });
     return;
   }
+  // hasing passwork using bcrypt
   bcrypt.genSalt(10).then((salt) => {
     bcrypt.hash(password, salt).then((hashedPassword) => {
       UserModel.create({
@@ -24,12 +26,12 @@ router.post("/signup", (req, res) => {
         password: hashedPassword,
       }).then(() => {
         console.log(hashedPassword, name, email);
-        res.redirect("/");
+        res.redirect("/login");
       });
     });
   });
 });
-
+// login 
 router.get("/login", (req, res) => {
   res.render("auth/login.hbs");
 });
@@ -54,6 +56,14 @@ router.post("/login", (req, res) => {
   });
 });
 
+//logout
+router.get("/logout", (req, res) => {
+  req.session.destroy();
+  res.redirect("/");
+});
+
+
+//dashb
 router.get("/dashboard", (req, res) => {
   //show dashboard page
   res.render("dashboard.hbs", { name: req.session.loggedInUser.name });
