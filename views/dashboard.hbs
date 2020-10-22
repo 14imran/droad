@@ -1,3 +1,10 @@
+<div>
+      <form class="form-inline my-2 my-lg-0" action='/search' method="GET">
+        <input class="form-control mr-sm-2" name="searchBar" id="searchBar" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-warning my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+
 <div class="nav-scroller py-1 mb-2">
   <nav class="nav d-flex justify-content-between">
     <a class="p-2 text-muted" href="/headlines">Headlines</a>
@@ -16,17 +23,24 @@
   </nav>
 </div>
 
-
 <div class="jumbotron p-4 p-md-10 text-white rounded bg-secondary">
   <div class="col-md-10 px-0">
     <h3 class="display-5 font-italic text-left">Hi {{name}}, 
       Welcome to your dashboard</h3>
+  </div>
+</div>
+
+
+
+{{!-- <div class="jumbotron p-4 p-md-10 text-white rounded bg-secondary">
+  <div class="col-md-10 px-0">
+    <h3 class="display-5 font-italic text-left">Hi {{name}}, 
+      Welcome to your dashboard</h3> --}}
         {{!-- <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently
         about
         what’s most interesting in this post’s contents.</p> --}}
         {{!-- <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p> --}}
-  </div>
-</div>
+
 
 
 {{!-- 
