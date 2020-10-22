@@ -6,7 +6,7 @@ const router = express.Router()
 
 router.get('/', async(req, res) => {
   const articles = await Article.find().sort({ createdAt: 'desc' }).populate('author',['name','email'])
-  console.log("hi im arti",articles)
+  
   // let showEdit = articles.author._id === req.session.loggedInUser._id
     res.render('blogs/articles/index', { articles: articles })
   // res.render('blogs/articles/index', { article:new Article()})
@@ -54,7 +54,7 @@ router.put('/claps/:id', async (req, res, next) => {
   res.redirect('/articles')
   }
   catch(error){
-    console.log(error)
+    // console.log(error)
   }
   // .then((data)=>{
   //   console.log("data",data)
@@ -85,7 +85,7 @@ function saveArticleAndRedirect(path) {
     article.description = req.body.description
     article.markdown = req.body.markdown
     try {
-     console.log("req.",article)
+    //  console.log("req.",article)
       article = await article.save()
       res.redirect(`/articles`)
     } catch (e) {

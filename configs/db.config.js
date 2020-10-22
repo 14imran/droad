@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 mongoose
-  .connect("nope", {
+  .connect("mongodb+srv://imran:abc12345678@cluster0.fhlcu.mongodb.net/droad?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
