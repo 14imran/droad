@@ -2,22 +2,32 @@
 <a href="/articles/new" class="btn btn-success">New Article</a>
 
 
-
 {{#each articles}}
 
 <div>
   <hr>
   {{this.title}}<br>
   {{this.description}}<br>
-  {{this._id}}
-  {{this.slug}}
+  author : {{this.author.name}}
+  <br>
+  mail :{{this.author.email}}<br>
   <a href="articles/{{this.slug}}" class="btn btn-primary">Read More</a>
   <a href="articles/edit/{{this.id}}" class="btn btn-info">Edit</a>
-<a href="/articles/{{this._id}}/delete">
+
+  <a href="/articles/{{this._id}}/delete">
     <button type="submit" class="btn btn-primary">Delete</button>
-</a>
+  </a>
+  <br>
+  claps : {{this.claps}}
+  <form method="POST" action="/articles/claps/{{this.id}}?_method=PUT">
+
+    <button class="btn btn-sm"><img
+        src="https://img.icons8.com/cute-clipart/100/000000/applause.png" /></button><br><br>
+
+  </form>
+
 
   <hr>
-</div>
 
-{{/each}}
+
+  {{/each}}

@@ -67,6 +67,13 @@ app.use(methodOverride('_method'))
 // default value for title local
 app.locals.title = 'Express - Generated with IronGenerator';
 
+//for currentuser middleware
+app.use(function(req,res,next){
+  console.log("req.user" , req.session)
+  res.locals.currentUser = req.session
+
+  next();
+})
 
 
 const index = require('./routes/index');
@@ -92,6 +99,7 @@ app.use("/search", searchRoutes);
 // })
 
 // app.use('/articles', articleRouter)
+
 
 const articleRoutes = require("./routes/BlogsArticles.routes");
 app.use("/articles",articleRoutes);
