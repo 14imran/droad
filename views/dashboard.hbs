@@ -4,14 +4,13 @@
     <a class="p-2 text-muted" href="/everything">Everything</a>
     <a class="p-2 text-muted" href="/sources">Sources</a>
     <a class="p-2 text-muted" href="/entertainment">Entertainment</a>
-   <a class="p-2 text-muted" href="/health">Health</a>
+    <a class="p-2 text-muted" href="/health">Health</a>
     <a class="p-2 text-muted" href="/business">Business</a>
     <a class="p-2 text-muted" href="/technology">Tech</a>
-    {{!-- <a class="p-2 text-muted" href="#">Opinion</a> --}}
     <a class="p-2 text-muted" href="/science">Science</a>
     <a class="p-2 text-muted" href="/articles">Blogs</a>
-    
-    {{!-- <a class="p-2 text-muted" href="#">Style</a> --}}
+
+
 
   </nav>
 </div>
@@ -21,7 +20,52 @@
   <div class="col-md-6 px-0">
     <h1 class="display-8 font-italic">Hello {{name}},
       welcome to your dashboard<h1>
-      
+
   </div>
 </div>
 
+
+
+<div class="blogs">
+
+  <h1 class="mb-4">Blog Articles</h1>
+  <a href="/articles/new" class="btn btn-success">New Article</a>
+  <a href="/articles" class="btn btn-success">View Articles</a>
+
+
+  {{#each articles}}
+
+  <div>
+    <hr>
+    {{this.title}}<br>
+    {{this.description}}<br>
+    author : {{this.author.name}}
+    <br>
+    mail :{{this.author.email}}<br>
+    <a href="articles/{{this.slug}}" class="btn btn-primary">Read More</a>
+    claps : {{this.claps}}
+    <form method="POST" action="/articles/claps/{{this.id}}?_method=PUT">
+
+      <button class="btn btn-sm"><img
+          src="https://img.icons8.com/cute-clipart/100/000000/applause.png" /></button><br><br>
+
+    </form>
+    {{#if isUser}}
+    <a href="articles/edit/{{this.id}}" class="btn btn-info">Edit</a>
+
+    <a href="/articles/{{this._id}}/delete">
+      <button type="submit" class="btn btn-primary">Delete</button>
+    </a>
+    <a href="articles/{{this.slug}}" class="btn btn-primary">Read More</a>
+    <br>
+
+
+
+
+    <hr>
+
+
+    {{/if}}
+
+  </div>
+  {{/each}}

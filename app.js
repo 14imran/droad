@@ -69,7 +69,6 @@ app.locals.title = 'Express - Generated with IronGenerator';
 
 //for currentuser middleware
 app.use(function(req,res,next){
-  console.log("req.user" , req.session)
   res.locals.currentUser = req.session
 
   next();
@@ -100,9 +99,15 @@ app.use("/search", searchRoutes);
 
 // app.use('/articles', articleRouter)
 
+// mail
+
+const mailRoutes = require("./routes/mail.routes");
+app.use("/mail",mailRoutes);
 
 const articleRoutes = require("./routes/BlogsArticles.routes");
 app.use("/articles",articleRoutes);
+
+
 
 
 module.exports = app;

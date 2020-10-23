@@ -56,7 +56,15 @@
     </div>
 
         {{else}}
-        
+        <form method="POST" action="/mail/send">
+
+    <button class="btn btn-secondary my-2 my-sm-0">Subscribe</button><br><br>
+
+  </form>
+
+
+
+
   <div>
     {{this.currentUser.loggedInUser.name}}
       <button  class="btn btn-secondary my-2 my-sm-0" type="submit"><a style="color:white"href="/logout">Logout</a></button>

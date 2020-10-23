@@ -2,8 +2,12 @@ const express = require("express");
 const router = express.Router();
 var bcrypt = require("bcryptjs");
 const UserModel = require("../models/User.model");
-
-// signup 
+const Article = require("../models/Blogsarticle.model");
+// let data = require("./BlogsArticles.routes");
+const cons = require("consolidate");
+const session = require("express-session");
+// console.log(data.keys)
+// signup
 router.get("/signup", (req, res) => {
   res.render("auth/signup.hbs");
 });
@@ -31,7 +35,7 @@ router.post("/signup", (req, res) => {
     });
   });
 });
-// login 
+// login
 router.get("/login", (req, res) => {
   res.render("auth/login.hbs");
 });
@@ -62,11 +66,31 @@ router.get("/logout", (req, res) => {
   res.redirect("/");
 });
 
-
 //dashb
-router.get("/dashboard", (req, res) => {
+router.get("/dashboard", async (req, res) => {
   //show dashboard page
-  res.render("dashboard.hbs", { name: req.session.loggedInUser.name });
+  let isUser
+  try {
+    const articles = await Article.find()
+      .sort({ createdAt: "desc" })
+      .populate("author", ["name", "email"]);
+articles.forEach((eachArticle)=>{
+if (JSON.stringify(  req.session.loggedInUser._id) ===JSON.stringify( eachArticle.author._id)) {
+
+  eachArticle["isUser"] = true;
+} else {
+  eachArticle["isUser"]  = false;
+}
+
+})
+
+    res.render("dashboard.hbs", {
+      name: req.session.loggedInUser.name,
+      articles: articles,
+    });
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 module.exports = router;
