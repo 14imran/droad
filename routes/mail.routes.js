@@ -3,7 +3,7 @@ const nodemailer = require("nodemailer");
 const router = require("./BlogsArticles.routes");
 const app = express();
 
-
+require("dotenv").config();
 
 router.get("/subscribe", (req, res) => {
   res.render("contact");
@@ -14,8 +14,8 @@ router.post("/send", (req, res) => {
     pool: true,
     service: "Gmail",
     auth: {
-        user: "pytester26@gmail.com",
-        pass: "Testit012"
+        user: process.env.user,
+        pass: process.env.pass
     }
 });
 
